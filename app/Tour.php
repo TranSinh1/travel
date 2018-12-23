@@ -17,7 +17,7 @@ class Tour extends Model
     }
     public function person()
     {
-    	return $this->hasMany('App/Persion', 'tour_id', 'id');
+    	return $this->hasMany('App/Person', 'tour_id', 'id');
     }
     public function transport()
     {
