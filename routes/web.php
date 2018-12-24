@@ -22,19 +22,27 @@ Route::get('/view-block/user', function () {
 //test middleware check user is admin
 Route::get('/', function () {
     return view('welcome');
+
 })->middleware('check.admin');
 
-Route::get('test', function () {
-    return view('admin.layout.index');
-});
-Route::get('test1', function () {
-    return view('admin.user.list');
-});
-Route::get('test2', function () {
-    return view('admin.user.edit');
-});
-Route::get('test3', function () {
-    return view('admin.user.add');
+Route::group(['prefix'=>'admin'], function() 
+{
+	Route::group(['prefix'=>'role'], function() 
+	{
+		Route::get('list', 'RoleController@getList');
+
+		Route::get('update/{id}', 'RoleController@getUpdate');
+
+		Route::post('update/{id}', 'RoleController@postUpdate');
+
+		Route::get('create', 'RoleController@getCreate');
+
+		Route::post('create', 'RoleController@postCreate');
+
+		Route::get('delete/{id}', 'RoleController@getDelete');
+
+	});
+	
 });
 
 
