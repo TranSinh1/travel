@@ -20,21 +20,43 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
     public function role()
     {
         return $this->belongsTo('App/Role', 'role_id', 'id');
     }
+
     public function organisation()
     {
         return $this->hasMany('App/Organisation', 'organisation_id', 'id');
     }
+
     public function comment()
     {
         return $this->hasMany('App/Comment', 'user_id', 'id');
     }
+
     public function order()
     {
         return $this->hasMany('App/Order', 'user_id', 'id');
+    }
+
+    //check is admin
+    public function scopeIsAdmin($query, $user)
+    {
+        $check = $user->role_id == Role::where('name', config('user.user.is_admin'))->first()->id ? true : false;
+
+        return json_encode($check);
+
+    }
+
+    //check user is block
+    public function scopeIsBlock($query, $user)
+    {
+        $check = $user->role_id == Role::where('name', config('user.user.is_block'))->first()->id ? true : false;
+
+        return json_encode($check);
+
     }
 
     /**

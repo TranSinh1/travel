@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(
-            \App\Repositories\Role\RoleEloquentRepository::class;
-            \App\Repositories\Role\RoleRepositoryInterface::class;
+            \App\Repositories\Role\RoleRepositoryInterface::class,
+            \App\Repositories\Role\RoleEloquentRepository::class
         );
     }
 }
