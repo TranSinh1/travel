@@ -1,8 +1,10 @@
 <?php
-namespace App\Repositories;
+namespace App\Repositories\Role;
+
 interface RoleRepositoryInterface
 {
 	public function getAllPublished();
 
 	public function findOnlyPublished();
+
 }
