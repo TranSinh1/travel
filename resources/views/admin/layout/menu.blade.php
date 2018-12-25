@@ -22,19 +22,19 @@
                                     <a href="admin/role/list">List Role</a>
                                 </li>
                                 <li>
-                                    <a href="admin/role/create">Add Role</a>
+                                    <a href="admin/role/create">Create Role</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i> Paymethod<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Product</a>
+                                    <a href="admin/paymethod/list">List Paymethod</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add Product</a>
+                                    <a href="admin/paymethod/create">Create Paymethod</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
