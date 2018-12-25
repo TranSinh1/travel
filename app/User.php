@@ -28,7 +28,7 @@ class User extends Authenticatable
 
     public function organisation()
     {
-        return $this->hasMany('App/Organisation', 'organisation_id', 'id');
+        return $this->hasMany('App/Organisation', 'user_id', 'id');
     }
 
     public function comment()
