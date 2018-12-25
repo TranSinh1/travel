@@ -23,9 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
+        $this->app->bind(
             \App\Repositories\Role\RoleRepositoryInterface::class,
             \App\Repositories\Role\RoleEloquentRepository::class
+        );
+
+        $this->app->bind(
+            \App\Repositories\Paymethod\PaymethodRepositoryInterface::class,
+            \App\Repositories\Paymethod\PaymethodEloquentRepository::class
         );
     }
 }
