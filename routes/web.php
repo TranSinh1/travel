@@ -17,7 +17,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //is user has been block, redirect to route
 Route::get('/view-block/user', function () {
     //something
-})->name('view.block.user');
+})->name('view.block.user')->middleware('check.block.user');
 
 //test middleware check user is admin
 Route::get('/', function () {
@@ -40,6 +40,22 @@ Route::group(['prefix'=>'admin'], function()
 		Route::post('create', 'RoleController@postCreate');
 
 		Route::get('delete/{id}', 'RoleController@getDelete');
+
+	});
+
+	Route::group(['prefix'=>'paymethod'], function() 
+	{
+		Route::get('list', 'PaymethodController@getList');
+
+		Route::get('update/{id}', 'PaymethodController@getUpdate');
+
+		Route::post('update/{id}', 'PaymethodController@postUpdate');
+
+		Route::get('create', 'PaymethodController@getCreate');
+
+		Route::post('create', 'PaymethodController@postCreate');
+
+		Route::get('delete/{id}', 'PaymethodController@getDelete');
 
 	});
 	

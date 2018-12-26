@@ -6,17 +6,17 @@
                         <small>{{ $role->name }}</small>
             </h1>
         </div>
-         @if(count($errors)>0)
+         @if (count($errors)>0)
                        
             <div class="alert alert-danger">
                 @foreach($errors->all() as $err)
-                    {{$err}}<br>
+                    {{ $err }}<br>
                 @endforeach
             </div>
                        
         @endif
-        @if(session('alert'))
-            <div class="alert alert-success">{{session('alert')}}</div>
+        @if (session('alert'))
+            <div class="alert alert-success">{{ session('alert') }}</div>
         @endif
                     <!-- /.col-lg-12 -->
         <div class="col-lg-7" style="padding-bottom:120px">

@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">User
+            <h1 class="page-header">Paymethod
                 <small>List</small>
             </h1>
         </div>
@@ -20,12 +20,12 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($roles as $r)
+            @foreach($paymethods as $p)
                 <tr class="odd gradeX" align="center">
-                    <td>{{ $r->id }}</td>
-                    <td>{{ $r->name }}</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/role/delete/{{ $r->id }}" onclick="return window.confirm('Are you sure?');"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/role/update/{{ $r->id }}" >Edit</a></td>
+                    <td>{{ $p->id }}</td>
+                    <td>{{ $p->name }}</td>
+                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/paymethod/delete/{{ $p->id }}" onclick="return window.confirm('Are you sure?');"> Delete</a></td>
+                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/paymethod/update/{{ $p->id }}" >Edit</a></td>
                 </tr>
             @endforeach
             </tbody>
