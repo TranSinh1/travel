@@ -16,37 +16,37 @@
                             <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Role<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>{{ trans('messages.role') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/role/list">List Role</a>
+                                    <a href="admin/role/list">{{trans('messages.listRole')}}</a>
                                 </li>
                                 <li>
-                                    <a href="admin/role/create">Create Role</a>
+                                    <a href="admin/role/create">{{trans('messages.createRole')}}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Paymethod<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i>{{trans('messages.paymethod')}}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/paymethod/list">List Paymethod</a>
+                                    <a href="admin/paymethod/list">{{trans('messages.listPaymethod')}}</a>
                                 </li>
                                 <li>
-                                    <a href="admin/paymethod/create">Create Paymethod</a>
+                                    <a href="admin/paymethod/create">{{trans('messages.createPaymethod')}}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users fa-fw"></i>{{trans('messages.user')}}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List User</a>
+                                    <a href="#">{{trans('messages.listUser')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add User</a>
+                                    <a href="#">{{trans('messages.createUser')}}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
