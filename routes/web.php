@@ -25,19 +25,21 @@ Route::get('/', function () {
 
 })->middleware('check.admin');
 
-Route::group(['prefix'=>'admin'], function() 
+Route::get('change-language/{language}', 'LocaleController@language')->name('user.change-language')->middleware('locale');
+
+Route::group(['prefix'=>'admin', 'middleware' => 'locale'], function() 
 {
 	Route::group(['prefix'=>'role'], function() 
 	{
-		Route::get('list', 'RoleController@getList');
+		Route::get('list', 'RoleController@getList')->name('list.role');
 
 		Route::get('update/{id}', 'RoleController@getUpdate');
 
-		Route::post('update/{id}', 'RoleController@postUpdate');
+		Route::post('update/{id}', 'RoleController@postUpdate')->name('update.role');
 
 		Route::get('create', 'RoleController@getCreate');
 
-		Route::post('create', 'RoleController@postCreate');
+		Route::post('create', 'RoleController@postCreate')->name('create.role');
 
 		Route::get('delete/{id}', 'RoleController@getDelete');
 
@@ -45,15 +47,15 @@ Route::group(['prefix'=>'admin'], function()
 
 	Route::group(['prefix'=>'paymethod'], function() 
 	{
-		Route::get('list', 'PaymethodController@getList');
+		Route::get('list', 'PaymethodController@getList')->name('list.paymethod');
 
 		Route::get('update/{id}', 'PaymethodController@getUpdate');
 
-		Route::post('update/{id}', 'PaymethodController@postUpdate');
+		Route::post('update/{id}', 'PaymethodController@postUpdate')->name('update.paymethod');
 
 		Route::get('create', 'PaymethodController@getCreate');
 
-		Route::post('create', 'PaymethodController@postCreate');
+		Route::post('create', 'PaymethodController@postCreate')->name('create.paymethod');
 
 		Route::get('delete/{id}', 'PaymethodController@getDelete');
 

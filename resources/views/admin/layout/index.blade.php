@@ -30,7 +30,10 @@
 <body>
 
     <div id="wrapper">
-
+    <div style="margin-top: 10px;margin-left: 10px;">
+        <a class="btn btn-success" href="{!! route('user.change-language', ['en']) !!}">English</a>
+        <a class="btn btn-success" href="{!! route('user.change-language', ['vi']) !!}">Vietnam</a>
+    </div>
         <!-- Navigation -->
        @include("admin.layout.header")
 
@@ -43,10 +46,9 @@
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
-
+ 
     <!-- jQuery -->
     <script src="admin/bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -73,6 +75,4 @@
     </script>
     @yield('script')
 </body>
-
 </html>
-
