@@ -10,12 +10,12 @@ class Organisation extends Model
 
     public function tour()
     {
-    	return $this->hasMany('App/Tour', 'organisation_id', 'id');
+    	return $this->hasMany('App\Tour', 'organisation_id', 'id');
     }
 
     public function user()
     {
-    	return $this->belongsTo('App/User', 'user_id', 'id');
+    	return $this->belongsTo('App\User', 'user_id', 'id');
     }
     
 }

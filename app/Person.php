@@ -10,7 +10,7 @@ class Person extends Model
 
     public function tour()
     {
-    	return $this->belongsTo('App/Tour', 'tour_id', 'id');
+    	return $this->belongsTo('App\Tour', 'tour_id', 'id');
     }
     
 }

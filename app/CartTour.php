@@ -10,12 +10,12 @@ class CartTour extends Model
 
     public function tour()
     {
-    	return $this->belongsTo('App/Tour', 'tour_id', 'id');
+    	return $this->belongsTo('App\Tour', 'tour_id', 'id');
     }
 
     public function order()
     {
-    	return $this->hasMany('App/Order', 'order_id', 'id');
+    	return $this->hasMany('App\Order', 'order_id', 'id');
     }
     
 }

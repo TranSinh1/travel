@@ -60,6 +60,24 @@ Route::group(['prefix'=>'admin', 'middleware' => 'locale'], function()
 		Route::get('delete/{id}', 'PaymethodController@getDelete');
 
 	});
+
+	Route::group(['prefix'=>'user'], function() 
+	{
+		Route::get('list', 'UserController@getList')->name('list.user');
+
+		Route::get('update/{id}', 'UserController@getUpdate');
+
+		Route::post('update/{id}', 'UserController@postUpdate')->name('update.user');
+
+		Route::get('create', 'UserController@getCreate');
+
+		Route::post('create', 'UserController@postCreate')->name('create.user');
+
+		Route::get('delete/{id}', 'UserController@getDelete');
+
+		Route::get('delete/getAjax', 'AjaxController@Delete');
+
+	});
 	
 });
 

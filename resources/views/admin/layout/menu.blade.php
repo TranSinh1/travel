@@ -43,10 +43,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i>{{trans('messages.user')}}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{trans('messages.listUser')}}</a>
+                                    <a href="admin/user/list">{{trans('messages.listUser')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{trans('messages.createUser')}}</a>
+                                    <a href="admin/user/create">{{trans('messages.createUser')}}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

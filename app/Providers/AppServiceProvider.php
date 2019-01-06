@@ -32,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Paymethod\PaymethodRepositoryInterface::class,
             \App\Repositories\Paymethod\PaymethodEloquentRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\User\UserRepositoryInterface::class,
+            \App\Repositories\User\UserEloquentRepository::class
+        );
     }
 }

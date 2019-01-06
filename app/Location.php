@@ -10,7 +10,7 @@ class Location extends Model
 
     public function tour()
     {
-    	return $this->belongsToMany('App/Tour', 'tours_locations', 'tour_id', 'location_id');
+    	return $this->belongsToMany('App\Tour', 'tours_locations', 'tour_id', 'location_id');
     }
     
 }

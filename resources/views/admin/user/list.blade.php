@@ -7,43 +7,47 @@
             </h1>
         </div>
         <!-- /.col-lg-12 -->
+         @if (session('alert'))
+            <div class="alert alert-success">{{ session('alert') }}</div>
+        @endif
         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead>
                 <tr align="center">
                     <th>ID</th>
-                    <th>Username</th>
-                    <th>Level</th>
-                    <th>Status</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Avatar</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="odd gradeX" align="center">
-                    <td>1</td>
-                    <td>quoctuan</td>
-                    <td>Superadmin</td>
-                    <td>Hiện</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+            @foreach ($users as $u )
+                <tr class="odd gradeX" align="center" id="row">
+                    <td>{{$u->id}}</td>
+                    <td>{{$u->name}}</td>
+                    <td>{{$u->email}}</td>
+                    <td>{{$u->role->name}}</td>
+                    <td>
+                       {{$u->avatar}}
+                    </td>
+                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/user/delete/{{$u->id}}" onclick="return window.confirm('Are you sure?');" id="delete"> Delete</a></td>
+                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/user/update/{{$u->id}}">Edit</a></td>
                 </tr>
-                <tr class="even gradeC" align="center">
-                    <td>2</td>
-                    <td>kutun</td>
-                    <td>Admin</td>
-                    <td>Ẩn</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                </tr>
-                <tr class="odd gradeX" align="center">
-                    <td>3</td>
-                    <td>kuteo</td>
-                    <td>Member</td>
-                    <td>Hiện</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $('#delete').onclick(function(event) {
+                $.get("admin/user/delete/getAjax", function(data){
+                    $('#row').html(data);
+                });
+            });
+        });
+    </script>
 @endsection

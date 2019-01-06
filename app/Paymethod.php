@@ -10,7 +10,7 @@ class Paymethod extends Model
 
     public function order()
     {
-    	return $this->hasMany('App/Order', 'order_id', 'id');
+    	return $this->hasMany('App\Order', 'order_id', 'id');
     }
     
 }

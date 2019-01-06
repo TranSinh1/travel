@@ -10,7 +10,7 @@ class Transport extends Model
 
     public function tour()
     {
-    	return $this->belongsToMany('App/Tour', 'tours_transports', 'tour_id', 'transport_id');
+    	return $this->belongsToMany('App\Tour', 'tours_transports', 'tour_id', 'transport_id');
     }
     
 }
